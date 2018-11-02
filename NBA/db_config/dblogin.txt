@@ -1,0 +1,4 @@
+MySQL - on amazon
+DB: nbadatabase
+user: bglodowski
+pass: Brain11!
