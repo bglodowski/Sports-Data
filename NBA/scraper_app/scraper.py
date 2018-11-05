@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def get_soup(params=None, ):
+def get_soup(params=None):
 	try:
 		response = requests.get('https://www.basketball-reference.com/boxscores', params)
 		soup = BeautifulSoup(response)

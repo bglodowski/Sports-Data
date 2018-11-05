@@ -1,7 +1,9 @@
 from datetime import date, timedelta
 
+from scraper import get_soup
 
-# Get yesterdays date
+# Get yesterdays date and make payload for GET request
 date = date.today() - timedelta(1)
 payload = {'month': str(date.month), 'day': str(date.day), 'year': str(date.year)}
-daily_base = 'https://www.basketball-reference.com/boxscores'
+soup = get_soup(payload)
+
