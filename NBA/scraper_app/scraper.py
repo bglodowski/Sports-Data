@@ -13,5 +13,15 @@ def get_soup(params=None):
 	return soup
 
 
+def get_daily_data(payload):
+	links = []
+	soup = get_soup(payload)
+	for link in soup.find_all('a', string='Box Score'):
+		links.append(link.get('href'))
+	return links
+
+
+
 
 def get_game_links(soup):
+	return None
