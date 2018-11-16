@@ -4,6 +4,7 @@ from multiprocessing import Pool
 from scraper import get_game_links, get_daily_data
 from helpermethods import get_last_processing_date, update_processing_date
 
+
 # Get last processing date(+1) and make payload for GET request, loop through days until yesterdays date is hit
 days_forward = 1
 while True:
