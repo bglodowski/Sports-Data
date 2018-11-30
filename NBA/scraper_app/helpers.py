@@ -10,7 +10,6 @@ def get_last_processing_date():
 		print("File cannot be found.")
 
 
-
 def update_processing_date(processing_date):
 	try:
 		with open('lastprocessingdate.txt', 'w')as f:

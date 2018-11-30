@@ -10,7 +10,7 @@ def get_connection():
     try:
         conn = pymysql.connect(host=HOST,
         password=PASSWORD,
-        host=HOST,
+        user=HOST,
         db=db)
 
         return conn

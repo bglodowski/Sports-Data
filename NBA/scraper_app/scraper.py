@@ -17,7 +17,6 @@ def get_daily_data(payload):
 	return None
 
 
-
 def get_game_links(url, payload):
 	links = []
 	soup = get_soup(url, payload)
