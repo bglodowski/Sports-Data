@@ -2,3 +2,6 @@ MySQL - on amazon
 DB: nbadatabase
 user: bglodowski
 pass: Brain11!
+
+https://docs.aws.amazon.com/lambda/latest/dg/vpc-rds.html
+https://blog.pythonanywhere.com/121/

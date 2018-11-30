@@ -2,9 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def get_soup(params=None):
+def get_soup(url, params=None):
 	try:
-		response = requests.get('https://www.basketball-reference.com/boxscores', params)
+		response = requests.get(url, params)
 		soup = BeautifulSoup(response.text, 'lxml')
 	except ConnectionError:
 		print('Unable to connect to website.')
@@ -17,9 +17,9 @@ def get_daily_data(payload):
 	return None
 
 
-def get_game_links(payload):
+def get_game_links(url, payload):
 	links = []
-	soup = get_soup(payload)
+	soup = get_soup(url, payload)
 	for link in soup.find_all('a', string='Box Score'):
 		tail = link.get('href')
 		url = 'https://www.basketball-reference.com{}'.format(tail)
