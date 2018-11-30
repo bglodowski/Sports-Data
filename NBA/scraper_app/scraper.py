@@ -17,7 +17,6 @@ def get_daily_data(payload):
 	return None
 
 
-
 def get_game_links(payload):
 	links = []
 	soup = get_soup(payload)
@@ -69,7 +68,7 @@ def get_player_stats(soup):
 # Combines multiple player list into 1 list for each player
 def stat_combiner(stats):
 	master = []
-	stats.sort()        # sort list so both list listed in a row
+	stats.sort()  # sort list so both list listed in a row
 	for i in range(0, len(stats), 2):  # Combines two list, second list is first table when sorted
 		combined = stats[i + 1] + stats[i][2:]
 		master.append(combined)
@@ -102,6 +101,8 @@ def get_team_stats(soup):
 
 	team_stats = []
 	home_indicator = [['A'], ['H']]
-	team_stats.append(tables_stats[0][0:2] + home_indicator[0] + tables_stats[0][3:21] + tables_stats[1][1:12] + tables_stats[1][13:])
-	team_stats.append(tables_stats[2][0:2] + home_indicator[1] + tables_stats[2][3:21] + tables_stats[3][1:12] + tables_stats[3][13:])
+	team_stats.append(
+		tables_stats[0][0:2] + home_indicator[0] + tables_stats[0][3:21] + tables_stats[1][1:12] + tables_stats[1][13:])
+	team_stats.append(
+		tables_stats[2][0:2] + home_indicator[1] + tables_stats[2][3:21] + tables_stats[3][1:12] + tables_stats[3][13:])
 	return team_stats
